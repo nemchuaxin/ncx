@@ -173,6 +173,7 @@ footer p {
 
     .tab-bar-right {
         order: 3;
+        color: red;
     }
 
     .tab-bar-logo {
