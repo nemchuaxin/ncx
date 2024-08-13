@@ -159,8 +159,37 @@ footer p {
         -webkit-text-stroke: 0.8px White;
     }
 
+    .tab-bar-left, .tab-bar-right {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
 
+    .tab-bar-left {
+        order: 1;
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .tab-bar-right {
+        order: 3;
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    .tab-bar-logo {
+        display: block;
+        margin: 0 auto;
+        order: 2;
+        transform: scale(3);
+    }
+    
+    .phone-number {
+        display: none; /* Ẩn số điện thoại trên màn hình nhỏ */
+    }
 }
+
 
 /* Modal Styles */
 .modal {
