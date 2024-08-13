@@ -161,17 +161,25 @@ footer p {
 
      .tab-bar-left, .tab-bar-right {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         width: 100%;
-        margin: 0;
         padding: 0;
+        margin: 0;
+    }
+
+    .tab-bar-left {
+        order: 1;
+    }
+
+    .tab-bar-right {
+        order: 3;
     }
 
     .tab-bar-logo {
         display: block;
         margin: 0 auto;
+        order: 2;
     }
-
 }
 
 /* Modal Styles */
