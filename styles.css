@@ -159,6 +159,18 @@ footer p {
         -webkit-text-stroke: 0.8px White;
     }
 
+     .tab-bar-left, .tab-bar-right {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tab-bar-logo {
+        display: block;
+        margin: 0 auto;
+    }
 
 }
 
