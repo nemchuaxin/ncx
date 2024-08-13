@@ -162,7 +162,7 @@ footer p {
 @media (max-width: 480px) {
 
     .banner{
-        padding: 100px 0;
+        padding: 90px 0;
     }
 
     .products img {
@@ -174,12 +174,12 @@ footer p {
     }
 
     .products-title {
-        font-size: 1em;
+        font-size: 1.1em;
         margin-left: 57px;
     }
 
     .tab-bar{
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
     .products .image-left, .products .image-right, .products .product {
         width: 100%;
@@ -206,7 +206,7 @@ footer p {
         display: block;
         margin: 0 auto;
         order: 2;
-        transform: scale(3.2);
+        transform: scale(3.4);
     }
     
     .phone-number {
@@ -216,7 +216,7 @@ footer p {
     .banner h1 {
         font-family: Arial, sans-serif;
         margin: 0;
-        font-size: 2em;
+        font-size: 1.8em;
         color: #4B0082;
         text-shadow: 
             1px 1px 0 #ffffff, 
