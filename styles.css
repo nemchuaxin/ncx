@@ -175,7 +175,7 @@ footer p {
     }
 
     .tab-bar{
-        font-size: 1.5px;
+        font-size: 1.5em;
     }
     .products .image-left, .products .image-right, .products .product {
         width: 100%;
@@ -217,7 +217,7 @@ footer p {
     .banner h1 {
         font-family: Arial, sans-serif;
         margin: 0;
-        font-size: 5em;
+        font-size: 1.5em;
         color: #4B0082;
         text-shadow: 
             1px 1px 0 #ffffff, 
