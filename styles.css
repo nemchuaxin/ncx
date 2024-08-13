@@ -16,9 +16,13 @@ a:hover {
     color: #02101f;
 }
 
+.caption{
+    color: #0000FF;
+}
+
 /* Tab Bar Styles */
 .tab-bar {
-    font-size: 1.2em;
+    font-size: 1.3em;
     background-color: #f8f9fa;
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
@@ -102,14 +106,20 @@ a:hover {
     font-size: 1.2em;
 }
 
+.product :hover{
+    cursor: pointer;
+    color: Black;
+}
+
 .products > div {
     width: 25%; /* Mỗi phần tử chiếm khoảng 30% chiều rộng của hàng */
     margin-bottom: 20px; /* Tạo khoảng cách giữa các hàng */
 }
 
 .products img {
-    max-width: 80%;
-    height: auto;
+    width: 370px;
+    height: 230px;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -150,6 +160,23 @@ footer p {
 }
 
 @media (max-width: 480px) {
+
+    .products img {
+        width: 350px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .products-title {
+        font-size: 0.8em;
+        margin-left: 57px;
+    }
+
+    .tab-bar{
+        font-size: 1.5px;
+    }
     .products .image-left, .products .image-right, .products .product {
         width: 100%;
     }
@@ -168,13 +195,11 @@ footer p {
 
     .tab-bar-left {
         order: 1;
-        flex: 1;
         justify-content: flex-start;
     }
 
     .tab-bar-right {
         order: 3;
-        flex: 1;
         justify-content: flex-end;
     }
 
@@ -188,47 +213,20 @@ footer p {
     .phone-number {
         display: none; /* Ẩn số điện thoại trên màn hình nhỏ */
     }
-}
 
-
-/* Modal Styles */
-.modal {
-    display: none; /* Ẩn modal mặc định */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    z-index: 1000; /* Đặt z-index cao để hiển thị trên các phần tử khác */
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    position: relative;
-}
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Mờ nền */
-    z-index: -1;
-}
-
-#order-form select {
-    width: auto;
-    padding: 10px;
-    font-size: 1.2em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    .banner h1 {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        font-size: 1.5em;
+        color: #4B0082;
+        text-shadow: 
+            1px 1px 0 #ffffff, 
+            -1px -1px 0 #ffffff,
+            1px -1px 0 #ffffff,
+            -1px 1px 0 #ffffff; /* Tạo viền bằng cách sử dụng nhiều lớp text-shadow */
+        font-weight: bold;
+    }
+    
 }
 
 .close-button {
@@ -357,8 +355,6 @@ form button:hover {
     }
 }
 
-
-
 .zalo-call-link {
     display: block;
     position: relative;
@@ -411,9 +407,24 @@ ul li a {
     font-weight: bold;
 }
 
-
-
 /* Hiển thị khi có class 'active' */
 .intro-content.active {
     display: block;
+}
+
+.product-details {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-details input {
+    margin: 5px 0;
+    padding: 5px;
 }
