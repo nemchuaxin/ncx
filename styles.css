@@ -185,11 +185,6 @@ footer p {
         width: 100%;
     }
 
-    .banner h1 {
-        font-size: 1.8em;
-        -webkit-text-stroke: 0.8px White;
-    }
-
     .tab-bar-left, .tab-bar-right {
         display: flex;
         width: 100%;
@@ -211,7 +206,7 @@ footer p {
         display: block;
         margin: 0 auto;
         order: 2;
-        transform: scale(3);
+        transform: scale(3.2);
     }
     
     .phone-number {
@@ -221,7 +216,7 @@ footer p {
     .banner h1 {
         font-family: Arial, sans-serif;
         margin: 0;
-        font-size: 1.5em;
+        font-size: 2em;
         color: #4B0082;
         text-shadow: 
             1px 1px 0 #ffffff, 
