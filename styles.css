@@ -68,7 +68,7 @@ a:hover {
     font-family: Arial, sans-serif;
     font-size: 3em;
     margin: 0;
-    color: #4B0082;
+    color: #0000FF;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bóng văn bản: x-offset, y-offset, blur radius, color */
     font-weight: bold; /* Làm chữ đậm hơn */
     -webkit-text-stroke: 1.8px White; /* Viền văn bản: độ dày, màu */
@@ -514,4 +514,22 @@ ul li a {
 
 .close-btn:hover {
     color: #e00; /* Change color on hover for better UX */
+}
+
+.product {
+    position: relative; /* Để có thể định vị các phần tử con */
+    display: inline-block; /* Để đảm bảo các phần tử con được căn chỉnh chính xác */
+}
+
+.discount {
+    position: absolute;
+    top: -8px; /* Điều chỉnh giá trị để đưa dòng discount lên trên so với ảnh */
+    right: 40px; /* Điều chỉnh giá trị nếu cần thiết để di chuyển sang phải */
+    background-color: Red; /* Màu nền của thông tin giảm giá */
+    color: White; /* Màu chữ của thông tin giảm giá */
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px; /* Bo góc cho thông tin giảm giá */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng bóng mờ nếu cần */
 }
