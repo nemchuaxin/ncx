@@ -522,8 +522,8 @@ ul li a {
 
 .discount {
     position: absolute;
-    top: -8px; /* Điều chỉnh giá trị để đưa dòng discount lên trên so với ảnh */
-    right: 40px; /* Điều chỉnh giá trị nếu cần thiết để di chuyển sang phải */
+    top: 10px; /* Điều chỉnh giá trị để đưa dòng discount lên trên so với ảnh */
+    right: 60px; /* Điều chỉnh giá trị nếu cần thiết để di chuyển sang phải */
     background-color: Red; /* Màu nền của thông tin giảm giá */
     color: White; /* Màu chữ của thông tin giảm giá */
     padding: 5px 10px;
@@ -533,3 +533,19 @@ ul li a {
     border: 2.5px solid White; /* Thêm viền trắng */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng bóng mờ nếu cần */
 }
+
+.highlight {
+    animation: highlight 1s infinite; /* Thay đổi màu sắc trong 4 giây, lặp lại vô hạn */
+}
+  
+@keyframes highlight {
+    0% {
+      color: Blue; /* Màu đầu tiên */
+    }
+    50% {
+      color: red; /* Màu giữa chu kỳ */
+    }
+    100% {
+      color: Black; /* Màu cuối cùng */
+    }
+  }
