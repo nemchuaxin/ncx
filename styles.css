@@ -20,6 +20,10 @@ a:hover {
     color: #0000FF;
 }
 
+.price{
+    margin-bottom: 40px;
+}
+
 /* Tab Bar Styles */
 .tab-bar {
     font-size: 1.3em;
