@@ -531,6 +531,6 @@ ul li a {
     font-size: 16px;
     font-weight: bold;
     border-radius: 20px; /* Bo góc cho thông tin giảm giá */
-    border: 2px solid White; /* Thêm viền trắng */
+    border: 2.5px solid White; /* Thêm viền trắng */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng bóng mờ nếu cần */
 }
