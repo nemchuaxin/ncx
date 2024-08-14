@@ -254,10 +254,7 @@ footer p {
         font-weight: bold;
     }
     
-}
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
     .product-details {
         width: 90%; /* Full width on smaller screens */
         max-width: 90%; /* Ensure modal does not exceed viewport width */
