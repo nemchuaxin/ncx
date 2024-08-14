@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('product-details');
-    const closeButton = document.querySelector('#product-details button');
+    const modal = document.getElementById('product-modal');
+    const overlay = document.getElementById('modal-overlay');
+    const closeButton = document.querySelector('#product-modal #close-modal');
     const products = document.querySelectorAll('.product');
     const introLink = document.getElementById('intro-link');
     const introContent = document.getElementById('intro-content');
@@ -12,17 +13,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Hiển thị modal khi nhấp vào ảnh sản phẩm
     function openModal(description, price) {
-        if (modal) {
+        if (modal && overlay) {
             document.getElementById('product-name').innerText = description;
             document.getElementById('product-price').innerText = price;
             modal.style.display = 'block';
+            overlay.style.display = 'block';
         }
     }
 
     // Đóng modal
     function closeModal() {
-        if (modal) {
+        if (modal && overlay) {
             modal.style.display = 'none';
+            overlay.style.display = 'none';
         }
     }
 
@@ -54,12 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
         closeButton.addEventListener('click', closeModal);
     }
 
-    // Đóng modal khi nhấp ra ngoài modal
-    window.addEventListener('click', (event) => {
-        if (modal && event.target === modal) {
-            closeModal();
-        }
-    });
+    // Đóng modal khi nhấp vào overlay (vùng trống bên ngoài modal)
+    if (overlay) {
+        overlay.addEventListener('click', closeModal);
+    }
 
     // Xử lý việc gửi đơn hàng
     const orderForm = document.getElementById('order-form');
