@@ -166,7 +166,7 @@ footer p {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 150%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     display: none; /* Hide by default */
@@ -497,4 +497,21 @@ ul li a {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1000; /* Đặt z-index cao hơn overlay */
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #e00; /* Change color on hover for better UX */
 }
