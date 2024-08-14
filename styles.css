@@ -92,6 +92,8 @@ a:hover {
     color: #0000FF;
     justify-content: left;
     margin: 0 72px; /* Remove default margin */
+    white-space: normal; /* Đảm bảo text có thể tự động xuống dòng */
+    word-wrap: break-word; /* Cho phép text dài xuống dòng mà không bị tràn ra ngoài */
 }
 
 
