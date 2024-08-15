@@ -125,18 +125,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Tính doanh thu
-    function calculateRevenue() {
-        const sellingPrice = parseFloat(document.getElementById('selling-price').value);
-        const productPrice = parseFloat(document.getElementById('product-price').innerText.replace('đ', '').replace(',', ''));
-        const quantity = parseFloat(document.getElementById('quantity').value);
+function calculateRevenue() {
+    const sellingPrice = parseFloat(document.getElementById('selling-price').value);
+    const productPrice = parseFloat(document.getElementById('product-price').innerText.replace('đ', '').replace(',', ''));
+    const quantity = parseFloat(document.getElementById('quantity').value);
 
-        if (!isNaN(sellingPrice) && !isNaN(productPrice) && !isNaN(quantity)) {
-            const revenue = (sellingPrice - productPrice * 0.8) * quantity;
-            document.getElementById('revenue').textContent = `Doanh thu: ${revenue.toFixed(2)}đ`;
-        } else {
-            document.getElementById('revenue').textContent = 'Vui lòng nhập một số hợp lệ.';
-        }
+    if (!isNaN(sellingPrice) && !isNaN(productPrice) && !isNaN(quantity)) {
+        const revenue = Math.round((sellingPrice - productPrice*1000* 0.8) * quantity);
+        
+        // Thêm dấu phân cách cho số tiền
+        const formattedRevenue = revenue.toLocaleString('vi-VN');
+        
+        document.getElementById('revenue').textContent = `Doanh thu: ${formattedRevenue}đ`;
+    } else {
+        document.getElementById('revenue').textContent = 'Vui lòng nhập một số hợp lệ.';
     }
+}
+
 
     // Xử lý việc tính doanh thu khi nhấp vào nút trong modal
     if (calculateRevenueButton) {
