@@ -531,7 +531,7 @@ ul li a {
 .discount {
     position: absolute;
     top: 10px; /* Điều chỉnh giá trị để đưa dòng discount lên trên so với ảnh */
-    right: 60px; /* Điều chỉnh giá trị nếu cần thiết để di chuyển sang phải */
+    right: 45px; /* Điều chỉnh giá trị nếu cần thiết để di chuyển sang phải */
     background-color: Red; /* Màu nền của thông tin giảm giá */
     color: White; /* Màu chữ của thông tin giảm giá */
     padding: 5px 10px;
@@ -694,4 +694,17 @@ ul li a {
     object-fit: cover;
     margin: 0;
     scale: 0.8; /* Adjust scale if needed */
+}
+
+#intro-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Chiều cao 100% của viewport để căn giữa theo chiều dọc */
+    text-align: center; /* Căn giữa văn bản bên trong phần tử */
+}
+
+.intro {
+    max-width: 800px; /* Điều chỉnh chiều rộng tối đa để nội dung không quá rộng */
+    padding: 20px;
 }
