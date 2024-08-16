@@ -557,13 +557,6 @@ ul li a {
     }
 }
 
-.product-image{
-    width: 50%; 
-    max-height: 500px; 
-    object-fit: cover;
-    scale: 0.8;
-}
-
 /* Modal Styling */
 .product-details {
     position: fixed;
@@ -639,33 +632,66 @@ ul li a {
     z-index: 999; /* Below the modal */
 }
 
-.product-image {
-    width: 100%; /* Full width of modal */
-    max-height: 300px; /* Adjust height */
-    object-fit: cover;
-    margin: 20px 0;
-}
-
 /* Style for the button */
 .calculate-revenue {
     margin: 20px auto; /* Center the button horizontally */
     padding: 8px 16px; /* Adjust padding if needed */
     font-size: 18px; /* Font size */
-    background-color: #4CAF50; /* Green background */
+    background-color: #5555db; /* Green background */
+    border: 2px solid #5555db;
     color: white; /* White text */
-    border: none; /* Remove border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease; /* Smooth transition */
     display: block; /* Ensure the button is a block element */
     text-align: center; /* Center text inside the button */
+    font-size: 1.1em;
 }
 
 .calculate-revenue:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: White; /* Darker green on hover */
+    color:#5555db;
+    border: 2px solid #5555db;
 }
 
 .calculate-revenue:focus {
     outline: none; /* Remove default focus outline */
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Custom focus shadow */
+}
+
+.additional-images img {
+    width: 100%; /* Giống như .product-image */
+    max-height: 300px; /* Giống như .product-image */
+    object-fit: cover; /* Đảm bảo hình ảnh được hiển thị đúng */
+    margin: 20px 0; /* Thay đổi khoảng cách trên và dưới như .product-image */
+    display: block; /* Đảm bảo hình ảnh là block để dễ căn chỉnh */
+    margin: 20px auto; /* Center hình ảnh với khoảng cách trên và dưới */
+    scale: 0.8;
+}
+
+/* Container for images */
+.image-container {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Center items horizontally if needed */
+    gap: 20px; /* Optional: Add space between the images */
+    margin: 20px 0; /* Optional: Margin for spacing around the container */
+}
+
+
+
+.product-image{
+    width: 100%; /* Full width of modal */
+    max-height: 300px; /* Adjust height */
+    object-fit: cover;
+    scale: 0.8;
+}
+
+/* Style for additional images */
+.additional-images img {
+    flex: 1; /* Allow additional images to grow and take available space */
+    max-height: 300px;
+    object-fit: cover;
+    margin: 0;
+    scale: 0.8; /* Adjust scale if needed */
 }

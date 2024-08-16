@@ -13,15 +13,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const calculateRevenueButton = document.getElementById('calculate-revenue');
 
     // Hiển thị modal khi nhấp vào ảnh sản phẩm
-    function openModal(description, price, imageUrl) {
+    function openModal(description, price, imageUrl, additionalImages) {
         if (modal && overlay) {
             document.getElementById('product-name').innerText = description;
             document.getElementById('product-price').innerText = price;
             document.getElementById('product-image').src = imageUrl;
+    
+            // Xóa các ảnh cũ trước khi thêm ảnh mới
+            const additionalImagesContainer = document.getElementById('additional-images');
+            additionalImagesContainer.innerHTML = '';
+    
+            // Thêm các ảnh sản phẩm phụ vào modal
+            additionalImages.split(',').forEach(imgUrl => {
+                if (imgUrl.trim()) { // Kiểm tra nếu imgUrl không rỗng
+                    const img = document.createElement('img');
+                    img.src = imgUrl.trim();
+                    additionalImagesContainer.appendChild(img);
+                }
+            });
+    
             modal.style.display = 'block';
             overlay.style.display = 'block';
         }
     }
+    
 
     // Đóng modal
     function closeModal() {
@@ -31,27 +46,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Click to comeback trang chu 
-    if (homeLink) {
-        homeLink.addEventListener('click', function(event) {
-            event.preventDefault();
+    // Xử lý sự kiện khi nhấp vào ảnh sản phẩm
+    function showDetails(product) {
+        const description = product.querySelector('.caption').innerText;
+        const price = product.querySelector('.price').innerText;
+        const imageUrl = product.querySelector('img').src;
+        const additionalImages = product.dataset.additionalImages || '';
 
-            // Hiển thị lại các phần đã ẩn
-            if (banner) banner.style.display = 'block';
-            if (introContent) introContent.style.display = 'none';
-            if (revenueFormContainer) revenueFormContainer.style.display = 'none';
-
-            console.log('Trang chủ tab clicked');
-        });
+        openModal(description, price, imageUrl, additionalImages);
     }
 
-    // Xử lý sự kiện khi nhấp vào ảnh sản phẩm
     products.forEach(product => {
         product.addEventListener('click', function () {
-            const description = this.querySelector('.caption').innerText;
-            const price = this.querySelector('.price').innerText;
-            const imageUrl = this.querySelector('img').src; // Lấy URL hình ảnh của sản phẩm
-            openModal(description, price, imageUrl);
+            showDetails(this);
         });
     });
 
@@ -125,23 +132,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Tính doanh thu
-function calculateRevenue() {
-    const sellingPrice = parseFloat(document.getElementById('selling-price').value);
-    const productPrice = parseFloat(document.getElementById('product-price').innerText.replace('đ', '').replace(',', ''));
-    const quantity = parseFloat(document.getElementById('quantity').value);
+    function calculateRevenue() {
+        const sellingPrice = parseFloat(document.getElementById('selling-price').value);
+        const productPrice = parseFloat(document.getElementById('product-price').innerText.replace('đ', '').replace(',', ''));
+        const quantity = parseFloat(document.getElementById('quantity').value);
 
-    if (!isNaN(sellingPrice) && !isNaN(productPrice) && !isNaN(quantity)) {
-        const revenue = Math.round((sellingPrice - productPrice*1000* 0.8) * quantity);
-        
-        // Thêm dấu phân cách cho số tiền
-        const formattedRevenue = revenue.toLocaleString('vi-VN');
-        
-        document.getElementById('revenue').textContent = `Doanh thu: ${formattedRevenue}đ`;
-    } else {
-        document.getElementById('revenue').textContent = 'Vui lòng nhập một số hợp lệ.';
+        if (!isNaN(sellingPrice) && !isNaN(productPrice) && !isNaN(quantity)) {
+            const revenue = Math.round((sellingPrice - productPrice * 0.8) * quantity);
+            
+            // Thêm dấu phân cách cho số tiền
+            const formattedRevenue = revenue.toLocaleString('vi-VN');
+            
+            document.getElementById('revenue').textContent = `Doanh thu: ${formattedRevenue}đ`;
+        } else {
+            document.getElementById('revenue').textContent = 'Vui lòng nhập một số hợp lệ.';
+        }
     }
-}
-
 
     // Xử lý việc tính doanh thu khi nhấp vào nút trong modal
     if (calculateRevenueButton) {
