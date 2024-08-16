@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const quantity = parseFloat(document.getElementById('quantity').value);
 
         if (!isNaN(sellingPrice) && !isNaN(productPrice) && !isNaN(quantity)) {
-            const revenue = Math.round((sellingPrice - productPrice * 0.8) * quantity);
+            const revenue = Math.round((sellingPrice - productPrice * 100 * 0.9) * quantity);
             
             // Thêm dấu phân cách cho số tiền
             const formattedRevenue = revenue.toLocaleString('vi-VN');
