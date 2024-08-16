@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const introLink = document.getElementById('intro-link');
     const introContent = document.getElementById('intro-content');
     const banner = document.querySelector('section.banner');
+    const products_title = document.querySelector('.products-title');
+
+    const footer = document.querySelector('footer');
     const revenueFormButton = document.getElementById('show-revenue-form');
     const revenueFormContainer = document.getElementById('revenue-form-container');
     const revenueForm = document.getElementById('revenue-form');
@@ -159,14 +162,16 @@ document.addEventListener('DOMContentLoaded', function () {
         introLink.addEventListener('click', function(event) {
             event.preventDefault();
             console.log('Giới thiệu tab clicked');
-
+    
             // Ẩn các phần khác của trang
             if (banner) banner.style.display = 'none';
             if (products) products.forEach(product => product.style.display = 'none');
             if (revenueFormContainer) revenueFormContainer.style.display = 'none';
-
+            if (footer) footer.style.display = 'none';
+            if (products_title) products_title.style.display = 'none';  // Sửa thành đúng biến
             // Hiển thị phần giới thiệu
             if (introContent) introContent.style.display = 'block';
         });
     }
+    
 });
