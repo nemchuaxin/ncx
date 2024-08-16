@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const sellingPrice = parseFloat(document.getElementById('selling-price').value);
         const productPrice = parseFloat(document.getElementById('product-price').innerText.replace('đ', '').replace(',', ''));
         const quantity = parseFloat(document.getElementById('quantity').value);
-
+        
         if (!isNaN(sellingPrice) && !isNaN(productPrice) && !isNaN(quantity)) {
             const revenue = Math.round((sellingPrice - productPrice * 100 * 0.8) * quantity);
             
