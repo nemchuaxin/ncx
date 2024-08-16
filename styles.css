@@ -531,7 +531,7 @@ ul li a {
 .discount {
     position: absolute;
     top: 10px; /* Điều chỉnh giá trị để đưa dòng discount lên trên so với ảnh */
-    right: 45px; /* Điều chỉnh giá trị nếu cần thiết để di chuyển sang phải */
+    right: 25px; /* Điều chỉnh giá trị nếu cần thiết để di chuyển sang phải */
     background-color: Red; /* Màu nền của thông tin giảm giá */
     color: White; /* Màu chữ của thông tin giảm giá */
     padding: 5px 10px;
